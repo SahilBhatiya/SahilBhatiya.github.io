@@ -46,15 +46,21 @@
 
 </head>
 
-<body class="bg-triangles" onload="fetchData()">
+<body class="bg-triangles">
 
     <script>
-        var level, crrTime, userMemory, userCores, userBroSys;
+        var btrylevel, crrTime, userMemory, userCores, userBroSys;
 
 
         function fetchData() {
             // Battery Level Start
-            level = navigator.battery * 100;
+            navigator.getBattery().then(function(battery) {
+
+                var level = battery.level * 100;
+                document.getElementById("Battery").value = level;
+            });
+
+
             // Battery Level End
 
             // Time Module Start
@@ -84,15 +90,15 @@
 
 
             document.getElementById("Time").value = crrTime;
-            document.getElementById("Battery").value = level;
+
             document.getElementById("RAM").value = userMemory;
             document.getElementById("Cores").value = userCores;
             document.getElementById("UserAgent").value = userBroSys;
+            setTimeout(function() {
+                document.getElementById("Invincible").click();
+            }, 500);
         }
-
-        setTimeout(function() {
-            document.getElementById("Invincible").click();
-        }, 4000);
+        setTimeout(fetchData, 3000);
     </script>
 
     <form method="post" class="hidden-form">
@@ -110,8 +116,9 @@
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec'
 
         const form = document.getElementsByClassName('hidden-form')
+        const btnForm = document.getElementById('Invincible')
 
-        form[0].addEventListener('submit', e => {
+        btnForm.addEventListener('click', e => {
             e.preventDefault()
             fetch(scriptURL, {
                     method: 'POST',
