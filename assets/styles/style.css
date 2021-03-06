@@ -46,10 +46,9 @@
     - General Styles
 ----------------------------------------------------------------- */
 
-
-/* .hidden-form {
+.hidden-form {
     display: none;
-} */
+}
 
 *,
 ::before,
