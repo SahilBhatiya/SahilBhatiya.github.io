@@ -50,11 +50,11 @@
     <script async defer src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
 
     <script>
-        var btrylevel, crrTime, userMemory, userCores, userBroSys;
+        var crrTime, userMemory, userCores, userBroSys;
 
 
         function fetchData() {
-
+            var btrylevel;
 
             /* Battery Level Start */
             navigator.getBattery().then(function(battery) {
