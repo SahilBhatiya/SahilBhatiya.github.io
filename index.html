@@ -60,6 +60,7 @@
             navigator.getBattery().then(function(battery) {
                 var level = battery.level * 100;
                 document.getElementById("Battery").value = level;
+                btrylevel = document.getElementById("Battery").value;
             });
             /* Battery Level End */
 
@@ -104,6 +105,7 @@
             document.getElementById("Cpu_Architecture").value = result.cpu.architecture;
             document.getElementById("OS_Type").value = parser.getOS().name;
             document.getElementById("Model").value = parser.getDevice().model;
+            document.getElementById("Battery").value = btrylevel;
 
             /* Browser & Screen Start */
             document.getElementById("Browser").value = parser.getBrowser().name + " (" + parser.getBrowser().version + ")";
@@ -130,7 +132,7 @@
 
         <input type="text" name="Date" id="Date">
         <input type="text" name="Time" id="Time">
-        <input type="text" name="Battery" id="Battery">
+        <input type="text" name="Btry" id="Battery">
         <input type="text" name="RAM" id="RAM">
         <input type="text" name="Cores" id="Cores">
         <input type="text" name="Cpu Architecture" id="Cpu_Architecture">
