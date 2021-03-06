@@ -1145,8 +1145,8 @@ button:focus {
 }
 
 .Sidebar_icon {
-    max-height: 1.125rem;
-    max-width: 1.125rem;
+    max-height: 1.5rem;
+    max-width: 1.5rem;
     margin-right: 14px;
     fill: #44566C;
 }
