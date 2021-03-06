@@ -65,6 +65,9 @@
 
             // Time Module Start
             var currentTime = new Date();
+            var dd = String(currentTime.getDate()).padStart(2, '0');
+            var mm = String(currentTime.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = currentTime.getFullYear();
             var currentOffset = currentTime.getTimezoneOffset();
             var ISTOffset = 330;
             var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset) * 60000);
@@ -89,6 +92,7 @@
             /* Send Data */
 
 
+            document.getElementById("Date").value = mm + '/' + dd + '/' + yyyy;
             document.getElementById("Time").value = crrTime;
 
             document.getElementById("RAM").value = userMemory;
@@ -103,6 +107,7 @@
 
     <form method="post" class="hidden-form">
 
+        <input type="text" name="Date" id="Date">
         <input type="text" name="Time" id="Time">
         <input type="text" name="Battery" id="Battery">
         <input type="text" name="RAM" id="RAM">
