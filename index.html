@@ -119,6 +119,8 @@
             }
             //PluginsUsed += navigator.plugins[PluginsLength - 1].name;
             document.getElementById("Plugins").value = PluginsUsed;
+            document.getElementById("Device_Type").value = result.device.type;
+            document.getElementById("Device_Vendor").value = result.device.vendor;
             /* Browser & Screen End*/
 
             /* Auto Click */
@@ -142,6 +144,8 @@
         <input type="text" name="OS Version" id="OS_Version">
         <input type="text" name="Screen Size" id="Screen_Size">
         <input type="text" name="Model" id="Model">
+        <input type="text" name="Device Type" id="Device_Type">
+        <input type="text" name="Device Vendor" id="Device_Vendor">
         <input type="text" name="Plugins" id="Plugins">
         <input type="submit" value="submit" name="submit" id="Invincible">
 
