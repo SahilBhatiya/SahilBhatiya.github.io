@@ -1671,7 +1671,7 @@ button:focus {
     position: absolute;
     top: 0;
     right: 0;
-    width: 70%;
+    width: 60%;
     z-index: 1;
 }
 
