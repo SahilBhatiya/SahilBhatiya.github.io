@@ -1840,7 +1840,7 @@ button:focus {
 ----------------------------------------------------------------- */
 
 .footer {
-    color: #3B5998;
+    color: #fff;
     font-size: 0.875rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -3127,6 +3127,74 @@ button:focus {
 .medium-zoom-image--opened {
     border-radius: 0.0625rem;
     height: 100%;
+}
+
+.wave_section {
+    z-index: 1;
+    position: fixed;
+    width: 110%;
+    height: 50vh;
+    background-color: transparent;
+    overflow: hidden;
+    margin: 0px;
+    bottom: 0px;
+}
+
+.wave_section .wave {
+    margin: 0px;
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+    width: 100%;
+    height: 129px;
+    background: url("../img/Wave.svg");
+    background-size: 1000px 129px;
+}
+
+.wave_section .wave.wave1 {
+    animation: animateWave 20s linear infinite;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: -15px!important;
+}
+
+.wave_section .wave.wave2 {
+    animation: animateWave2 7s linear infinite;
+    opacity: 0.5;
+    animation-delay: 5s;
+    bottom: -5px!important;
+}
+
+.wave_section .wave.wave3 {
+    animation: animateWave 10s linear infinite;
+    opacity: 0.2;
+    animation-delay: 2s;
+    bottom: 0px!important;
+}
+
+.wave_section .wave.wave4 {
+    animation: animateWave2 7s linear infinite;
+    opacity: 0.7;
+    animation-delay: 10s;
+    bottom: 5px!important;
+}
+
+@keyframes animateWave {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animateWave2 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
 }
 
 
