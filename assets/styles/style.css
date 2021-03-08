@@ -44,8 +44,34 @@
 /* @import url("https://fonts.googleapis.com/css?family=Merriweather:400,900&amp;display=swap"); */
 
 @font-face {
-    font-family: "Archivo", sans-serif;
-    src: "https://fonts.googleapis.com/css?family=Archivo:400,400i,500,500i,600,600i,700,700i";
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/archivo/v7/k3kQo8UDI-1M0wlSfdnoLg.woff2) format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/archivo/v7/k3kVo8UDI-1M0wlSdSrLO0nhLJqM.woff2) format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/archivo/v7/k3kVo8UDI-1M0wlSdQbMO0nhLJqM.woff2) format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/archivo/v7/k3kVo8UDI-1M0wlSdWLNO0bhLA.woff2) format('woff2');
     font-display: swap;
 }
 
