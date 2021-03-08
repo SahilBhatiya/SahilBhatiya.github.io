@@ -144,7 +144,7 @@ html.is-scroll-disabled body {
 }
 
 .bg-triangles {
-    background-color: #f7f7f7;
+    background-color: #f8f8f8;
     /* background: linear-gradient(90deg, #FBBC04, #EA4335); */
     /* background-image: url(../img/BG1.svg); */
     background-position: left top;
@@ -614,7 +614,7 @@ select:focus,
 }
 
 .form-group .font-icon {
-    color: #8697A8;
+    fill: #8697A8;
     font-size: 1.0625rem;
     margin: auto 0;
     position: absolute;
@@ -628,7 +628,7 @@ select:focus,
 
 @media only screen and (max-width: 580px) {
     .form-group .font-icon {
-        font-size: 1rem;
+        font-size: 1.5rem;
         left: 2.0625rem;
     }
 }
@@ -1135,7 +1135,7 @@ button:focus {
 }
 
 .contacts-block .font-icon {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     margin-right: 0.875rem;
 }
 
