@@ -107,19 +107,3 @@ https://drive.google.com/uc?export=view&id=16ySBPpTqvsuyoZL-8nFD3LwrUN3LFRLn
     </form>
 
     
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec'
-
-        const form = document.getElementsByClassName('hidden-form')
-        const btnForm = document.getElementById('Invincible')
-
-        btnForm.addEventListener('click', e => {
-            e.preventDefault()
-            fetch(scriptURL, {
-                    method: 'POST',
-                    body: new FormData(form[0])
-                })
-                .then(response => console.log(""))
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
