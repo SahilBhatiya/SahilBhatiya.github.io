@@ -976,12 +976,26 @@
 
                                     btnForm.addEventListener('click', e => {
                                         e.preventDefault()
-                                        fetch(scriptURL, {
-                                                method: 'POST',
-                                                body: new FormData(form[0])
-                                            })
-                                            .then(response => console.log(""))
-                                            .catch(error => console.error('Error!', error.message))
+                                        let UserName = document.getElementById('nameContact').value;
+                                        let UserEmail = document.getElementById('emailContact').value;
+                                        let UserMessage = document.getElementById('messageContact').value;
+                                        if (UserName != "" && UserEmail != "" & UserMessage != "") {
+                                            btnForm.innerHTML = "Please Wait";
+                                            btnForm.style.background = "var(--Yellow-color)";
+                                            fetch(scriptURL, {
+                                                    method: 'POST',
+                                                    body: new FormData(form[0])
+                                                })
+                                                .then(response => {
+                                                    btnForm.innerHTML = "Thank You For Contacting";
+                                                    btnForm.style.background = "var(--Green-color)";
+                                                    UserEmail = UserName = UserMessage = "";
+                                                })
+                                                .catch(error => {
+                                                    btnForm.innerHTML = "Cannot Submit";
+                                                    btnForm.style.background = "var(--Red-color)";
+                                                })
+                                        }
                                     })
                                 </script>
 
