@@ -2039,7 +2039,7 @@ button:focus {
         top: 50%;
         right: .125rem;
         transform: translateY(-50%);
-        content: '\e90e';
+        content: '▼';
         z-index: 10
     }
     .select.is-open .placeholder:after {
