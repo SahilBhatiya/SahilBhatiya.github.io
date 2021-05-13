@@ -3058,3 +3058,11 @@ button:focus {
         background-position-x: -1000px
     }
 }
+
+.Testimonial__Link {
+    color: #44566c;
+}
+
+.Testimonial__Link:hover {
+    text-decoration: none;
+}
