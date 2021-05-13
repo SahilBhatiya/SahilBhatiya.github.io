@@ -12,7 +12,7 @@
 }
 
 svg {
-    height: 24px;
+    height: 20px;
 }
 
 html {
@@ -31,7 +31,7 @@ html {
 }
 
 body {
-    background-color: #f5f6f7;
+    background-color: #fff;
     color: #44566c;
     font-size: .9375rem;
     font-weight: 400;
@@ -101,10 +101,7 @@ html.is-scroll-disabled body {
 }
 
 .bg-triangles {
-    background-color: #f8f8f8;
-    background-position: left top;
-    background-repeat: no-repeat;
-    background-size: contain
+    background-color: #fff;
 }
 
 @media only screen and (max-width:580px) {
@@ -1277,7 +1274,7 @@ button:focus {
 }
 
 .shadow {
-    box-shadow: 0 2.5rem 3.125rem rgba(103, 118, 128, .1) !important
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px!important;
 }
 
 .shadow::before {
@@ -1342,7 +1339,7 @@ button:focus {
 }
 
 .gutter-top {
-    padding-top: 10rem
+    padding-top: 9.5rem
 }
 
 @media only screen and (max-width:580px) {
