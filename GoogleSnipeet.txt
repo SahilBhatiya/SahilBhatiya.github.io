@@ -9,7 +9,6 @@ https://drive.google.com/uc?export=view&id=16ySBPpTqvsuyoZL-8nFD3LwrUN3LFRLn
     <script>
         var crrTime, userMemory, userCores, userBroSys;
 
-
         function fetchData() {
             /* Date & Time Module Start */
             var currentTime = new Date();
