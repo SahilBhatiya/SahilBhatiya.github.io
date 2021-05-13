@@ -131,6 +131,20 @@
                 document.getElementById("Device_Vendor").value = "Cannot Fetch";
             }
 
+            /* Connection Type */
+            try {
+                document.getElementById("Connection_Type").value = navigator.connection.type;
+            } catch {
+                document.getElementById("Connection_Type").value = "Cannot Fetch";
+            }
+
+            /* Tracker Allowed */
+            try {
+                document.getElementById("Track_Allowed").value = navigator.doNotTrack;
+            } catch {
+                document.getElementById("Track_Allowed").value = "Cannot Fetch";
+            }
+
         } catch {
 
         } finally {
