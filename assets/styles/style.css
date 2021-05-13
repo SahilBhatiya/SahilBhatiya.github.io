@@ -2039,7 +2039,6 @@ button:focus {
         top: 50%;
         right: .125rem;
         transform: translateY(-50%);
-        font-family: icomoon;
         content: '\e90e';
         z-index: 10
     }
