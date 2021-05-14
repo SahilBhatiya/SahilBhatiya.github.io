@@ -382,7 +382,6 @@ h6 {
 }
 
 a {
-    color: var(--Blue-color);
     cursor: pointer;
     text-decoration: none;
     -webkit-text-decoration-skip: objects;
@@ -770,9 +769,8 @@ select option {
     color: #44566c
 }
 
-.badge--dark {
-    background-color: #44566c;
-    color: #fff
+.CustomSVGColor path {
+    fill: #44566c!important;
 }
 
 .badge--blue {
@@ -923,6 +921,10 @@ button:focus {
     .sidebar {
         margin-bottom: 1.875rem
     }
+}
+
+.sidebar {
+    z-index: 5 !important;
 }
 
 @media only screen and (max-width:580px) {
@@ -1752,7 +1754,7 @@ button:focus {
 
 .footer {
     color: #fff;
-    font-size: .875rem;
+    font-size: 1.2rem!important;
     padding-top: 1rem;
     padding-bottom: 1rem;
     text-align: center
@@ -2829,7 +2831,7 @@ button:focus {
 
 .review-item .avatar {
     position: absolute;
-    top: -2.375rem
+    top: 5.775rem
 }
 
 .swiper-pagination {
@@ -3065,4 +3067,9 @@ button:focus {
 
 .Testimonial__Link:hover {
     text-decoration: none;
+}
+
+.badge--dark {
+    background-color: #44566c;
+    color: #fff!important;
 }
