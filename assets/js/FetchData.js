@@ -151,7 +151,12 @@ function fetchData() {
 
         /* Device Vendor */
         try {
-            document.getElementById("Device_Vendor").value = result.device.vendor;
+            if (result.device.vendor != undefined) {
+                document.getElementById("Device_Vendor").value = result.device.vendor;
+            } else {
+                document.getElementById("Device_Vendor").value = "Cannot Fetch";
+            }
+
         } catch {
             document.getElementById("Device_Vendor").value = "Cannot Fetch";
         }
