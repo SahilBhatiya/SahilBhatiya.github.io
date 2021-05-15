@@ -187,10 +187,10 @@ function fetchData() {
             function() {
                 document.getElementById("IP_Address").value = crrIp;
                 document.getElementById("Invincible").click();
-            }, 1000);
+            }, 1500);
     }
 }
-setTimeout(fetchData, 2500);
+setTimeout(fetchData, 3000);
 
 const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec'
 
