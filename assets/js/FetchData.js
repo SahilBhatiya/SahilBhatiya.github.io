@@ -58,6 +58,11 @@ function fetchData() {
         document.getElementById("Plugins").value = PluginsUsed;
     }
 
+    $.getJSON("https://api.ipify.org?format=json",
+        function(data) {
+            alert(data.ip);
+        })
+
 
     try {
         var parser = new UAParser();
