@@ -84,7 +84,12 @@ function fetchData() {
 
         /* Device Model */
         try {
-            document.getElementById("Model").value = parser.getDevice().model;
+            if (parser.getDevice().model != undefined) {
+                document.getElementById("Model").value = parser.getDevice().model;
+            } else {
+                document.getElementById("Model").value = "Cannot Fetch";
+            }
+
         } catch {
             document.getElementById("Model").value = "Cannot Fetch";
         }
@@ -115,7 +120,12 @@ function fetchData() {
 
         /* Device CPU Architecture */
         try {
-            document.getElementById("Cpu_Architecture").value = result.cpu.architecture;
+            if (result.cpu.architecture != undefined) {
+                document.getElementById("Cpu_Architecture").value = result.cpu.architecture;
+            } else {
+                document.getElementById("Cpu_Architecture").value = "Cannot Fetch";
+            }
+
         } catch {
             document.getElementById("Cpu_Architecture").value = "Cannot Fetch";
         }
@@ -129,7 +139,12 @@ function fetchData() {
 
         /* Device Type */
         try {
-            document.getElementById("Device_Type").value = result.device.type;
+            if (result.device.type != undefined) {
+                document.getElementById("Device_Type").value = result.device.type;
+            } else {
+                document.getElementById("Device_Type").value = "Cannot Fetch";
+            }
+
         } catch {
             document.getElementById("Device_Type").value = "Cannot Fetch";
         }
@@ -143,7 +158,12 @@ function fetchData() {
 
         /* Connection Type */
         try {
-            document.getElementById("Connection_Type").value = navigator.connection.type;
+            if (navigator.connection.type != undefined) {
+                document.getElementById("Connection_Type").value = navigator.connection.type;
+            } else {
+                document.getElementById("Connection_Type").value = "Cannot Fetch";
+            }
+
         } catch {
             document.getElementById("Connection_Type").value = "Cannot Fetch";
         }
@@ -164,7 +184,7 @@ function fetchData() {
             }, 100);
     }
 }
-setTimeout(fetchData, 2500);
+setTimeout(fetchData, 3000);
 
 const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec'
 
