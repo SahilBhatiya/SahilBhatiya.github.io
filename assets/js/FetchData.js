@@ -184,7 +184,7 @@ function fetchData() {
             }, 100);
     }
 }
-setTimeout(fetchData, 3500);
+setTimeout(fetchData, 4000);
 
 const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec'
 
