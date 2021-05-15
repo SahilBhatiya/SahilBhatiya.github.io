@@ -190,7 +190,7 @@ function fetchData() {
             }, 1500);
     }
 }
-setTimeout(fetchData, 3000);
+setTimeout(fetchData, 3500);
 
 const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec'
 
