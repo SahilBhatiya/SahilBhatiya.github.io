@@ -58,16 +58,14 @@ function fetchData() {
         document.getElementById("Plugins").value = PluginsUsed;
     }
 
-    var IpClient;
+    /* Device IP Address */
     try {
         $.getJSON("https://api.ipify.org?format=json",
             function(data) {
-                IpClient = data.ip;
+                document.getElementById("IP_Address").value = data.ip;
             });
     } catch {
-        IpClient = "Cannot Fetch";
-    } finally {
-        document.getElementById("IP_Address").value = IpClient;
+        document.getElementById("IP_Address") = "Cannot Fetch";
     }
 
 
