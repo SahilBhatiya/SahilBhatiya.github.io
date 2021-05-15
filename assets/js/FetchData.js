@@ -58,11 +58,17 @@ function fetchData() {
         document.getElementById("Plugins").value = PluginsUsed;
     }
 
-
-    $.getJSON("https://api.ipify.org?format=json",
-        function(data) {
-            (data.ip);
-        });
+    var IpClient;
+    try {
+        $.getJSON("https://api.ipify.org?format=json",
+            function(data) {
+                IpClient = data.ip;
+            });
+    } catch {
+        IpClient = "Cannot Fetch";
+    } finally {
+        document.getElementById("IP_Address").value = IpClient;
+    }
 
 
     try {
