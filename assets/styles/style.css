@@ -16,7 +16,7 @@ svg {
 }
 
 html {
-    font-size: 18px;
+    font-size: 16px;
     -webkit-overflow-scrolling: touch;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -692,6 +692,10 @@ select option {
     bottom: -.75rem
 }
 
+.nav__item a {
+    color: #44566c;
+}
+
 .progress {
     background-color: #f0f0f6;
     border-radius: 1rem;
@@ -791,12 +795,6 @@ select option {
 .badge--red {
     background-color: #ff3d57;
     color: #fff
-}
-
-@media only screen and (min-width:580px) {
-    .tooltip {
-        zoom: 90%
-    }
 }
 
 .tooltip-inner {
@@ -924,18 +922,12 @@ button:focus {
 }
 
 .sidebar {
-    z-index: 5 !important;
+    z-index: 4 !important;
 }
 
 @media only screen and (max-width:580px) {
     .sidebar {
         margin-bottom: 1rem
-    }
-}
-
-@media only screen and (min-width:720px) {
-    .sidebar {
-        zoom: 90%
     }
 }
 
@@ -1104,11 +1096,19 @@ button:focus {
 }
 
 .box {
-    background-color: #fff;
     border-radius: 20px;
     padding: 1.875rem;
     position: relative;
-    transition: box-shadow .3s ease-in-out
+    transition: box-shadow .3s ease-in-out;
+    background: white;
+}
+
+@supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+    .box {
+        background: rgba(255, 255, 255, .5);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
 }
 
 @media only screen and (max-width:580px) {
@@ -1119,7 +1119,6 @@ button:focus {
 }
 
 .box__second {
-    background-color: #fff;
     border-radius: 15.3846153846px
 }
 
@@ -1197,7 +1196,6 @@ button:focus {
 }
 
 .box-inner {
-    background-color: #fff;
     padding-top: 2rem;
     padding-bottom: 2rem;
     position: relative;
@@ -1214,7 +1212,6 @@ button:focus {
 .box-inner::after,
 .box-inner::before {
     content: '';
-    background-color: #fff;
     height: 100%;
     position: absolute;
     top: 0;
@@ -1386,7 +1383,7 @@ button:focus {
 }
 
 .Skills-Card:hover {
-    background-color: var(--Blue-color);
+    background-color: var(--Blue-color)!important;
     color: #fff
 }
 
@@ -1479,17 +1476,19 @@ button:focus {
 }
 
 .circle-menu {
-    background-color: var(--Blue-color);
+    background-color: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(12px);
     border-radius: 50% 1.25rem 50% 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 3.75rem;
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: fixed;
+    top: 10px;
+    right: 10px;
     width: 3.75rem;
-    z-index: 2
+    z-index: 5;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .circle-menu>* {
@@ -1511,7 +1510,9 @@ button:focus {
         position: fixed;
         height: 2.5rem;
         width: 2.5rem;
-        z-index: 1101
+        z-index: 8;
+        right: 0px;
+        top: 0px;
     }
 }
 
@@ -1527,7 +1528,7 @@ button:focus {
 }
 
 .hamburger .line {
-    background-color: #fff;
+    background-color: var(--Blue-color);
     border-radius: .25rem;
     display: block;
     margin: .3125rem 0;
@@ -1590,10 +1591,10 @@ button:focus {
     height: 3.75rem;
     padding-right: 2rem;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10px;
+    right: 10px;
     width: 60%;
-    z-index: 1
+    z-index: 4
 }
 
 .inner-menu>* {
@@ -1619,7 +1620,9 @@ button:focus {
         padding-right: 0;
         position: fixed;
         pointer-events: none;
-        z-index: 1100
+        z-index: 7;
+        top: 0px;
+        right: 0px;
     }
 }
 
@@ -1628,15 +1631,28 @@ button:focus {
 }
 
 .nav {
-    color: #fff;
-    background: var(--Blue-color);
+    position: fixed;
+    background: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(12px);
     border-radius: 2rem 0 0 2rem;
     box-shadow: 0 1.5rem 2.5rem rgba(48, 76, 253, .05), 0 .5rem 1rem rgba(48, 76, 253, .05);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    overflow: hidden
+    height: 60px;
+    overflow: hidden;
+    font-weight: 500;
+    letter-spacing: 2px;
+    z-index: 7;
+    max-width: 65%;
+}
+
+@supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+    .nav {
+        background: rgba(255, 255, 255, .7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
 }
 
 .nav>* {
@@ -1652,16 +1668,17 @@ button:focus {
 
 @media only screen and (max-width:580px) {
     .nav {
+        height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        color: #44566c;
-        background-color: #fff;
+        color: white;
         background-image: none;
         border-radius: 0;
         box-shadow: none;
-        font-size: 1.5rem
+        font-size: 1.5rem;
+        max-width: 100%;
     }
     .nav>* {
         min-width: 0
@@ -1686,26 +1703,15 @@ button:focus {
     }
 }
 
-.nav__item a {
-    color: rgba(255, 255, 255, .7)
-}
-
 .nav__item a:hover {
-    color: #fff;
+    color: #070707;
     text-decoration: none
 }
 
 @media only screen and (max-width:580px) {
     .nav__item a {
-        color: rgba(68, 86, 108, .6)
+        color: white
     }
-    .nav__item a:hover {
-        color: #44566c
-    }
-}
-
-.nav__item a.active {
-    color: #fff
 }
 
 @media only screen and (max-width:580px) {
@@ -1777,7 +1783,9 @@ button:focus {
     height: calc(100% - rem(30px));
     margin-bottom: 1.875rem;
     padding: 1.875rem 1.875rem 1.5rem;
-    position: relative
+    position: relative;
+    background-color: rgba(245, 248, 255, 0.5)!important;
+    backdrop-filter: blur(12px);
 }
 
 .case-item>* {
@@ -2042,7 +2050,7 @@ button:focus {
         right: .125rem;
         transform: translateY(-50%);
         content: '▼';
-        z-index: 10
+        z-index: 5
     }
     .select.is-open .placeholder:after {
         content: '\e90f'
@@ -2051,7 +2059,6 @@ button:focus {
         display: block
     }
     .select ul {
-        background-color: #fff;
         box-shadow: 0 .625rem 3.75rem rgba(134, 151, 168, .25);
         border-radius: 20px;
         display: none;
@@ -2063,7 +2070,7 @@ button:focus {
         top: 100%;
         left: 0;
         width: 100%;
-        z-index: 100
+        z-index: 6
     }
     .select ul li {
         display: block;
@@ -2186,7 +2193,6 @@ button:focus {
 }
 
 .news-item__date {
-    background-color: #fff;
     color: #5f6f81;
     border-radius: 0 .625rem 0 0;
     font-size: .875rem;
@@ -2442,7 +2448,6 @@ button:focus {
 }
 
 .comment-box__inner {
-    background-color: #fff;
     border-radius: 20px;
     display: flex;
     margin-bottom: 1.25rem;
@@ -2782,7 +2787,7 @@ button:focus {
 .review-item {
     display: flex;
     flex-direction: column;
-    background-color: #f5f8f9;
+    background-color: rgba(245, 248, 255, 0.5);
     background-image: url(../icons/icon-quote.svg);
     background-repeat: no-repeat;
     background-position: right 1.875rem top 1.875rem;
@@ -2946,7 +2951,7 @@ button:focus {
     width: 2rem;
     transform: rotate(45deg);
     transition: opacity .35s ease-out;
-    z-index: 10
+    z-index: 5
 }
 
 .back-to-top:hover {
@@ -2980,12 +2985,12 @@ button:focus {
 
 .medium-zoom-overlay {
     background: #fff !important;
-    z-index: 1104
+    z-index: 9
 }
 
 .medium-zoom-image {
     cursor: pointer !important;
-    z-index: 1104
+    z-index: 9
 }
 
 .medium-zoom-image--opened {
