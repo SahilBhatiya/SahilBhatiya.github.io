@@ -1704,19 +1704,19 @@ button:focus {
 }
 
 .nav__item a:hover {
-    color: #070707;
+    color: var(--Blue-color);
     text-decoration: none
 }
 
 @media only screen and (max-width:580px) {
     .nav__item a {
-        color: white
+        color: #44566c;
     }
 }
 
 @media only screen and (max-width:580px) {
     .nav__item a.active {
-        color: #44566c
+        color: var(--Blue-color)
     }
 }
 
