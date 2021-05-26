@@ -599,3 +599,5 @@ $(document).ready(function() {
         $("#validator-contact").removeClass().addClass(msgClasses).text(msg);
     }
 });
+
+$("#menu-display").css("opacity", "1");
