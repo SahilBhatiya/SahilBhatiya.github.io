@@ -23,6 +23,55 @@ $(document).ready(function() {
 
 
     /*-----------------------------------------------------------------
+      Loaded
+    -------------------------------------------------------------------*/
+
+    anime({
+        targets: 'body',
+        opacity: 1,
+        delay: 400,
+        complete: function(anim) {
+            progressBar(); //Init progress bar
+        }
+    });
+
+    $('body, .js-img-load').imagesLoaded({ background: !0 }).always(function(instance) {
+        preloader(); //Init preloader
+    });
+
+    function preloader() {
+        var tl = anime.timeline({});
+        tl
+            .add({
+                targets: '.preloader',
+                duration: 1,
+                opacity: 1
+            })
+            .add({
+                targets: '.circle-pulse',
+                duration: 300,
+                //delay: 500,
+                opacity: 1,
+                zIndex: '-1',
+                easing: 'easeInOutQuart'
+            }, '+=500')
+            .add({
+                targets: '.preloader__progress span',
+                duration: 500,
+                width: '100%',
+                easing: 'easeInOutQuart'
+            }, '-=500')
+            .add({
+                targets: '.preloader',
+                duration: 500,
+                opacity: 0,
+                zIndex: '-1',
+                easing: 'easeInOutQuart'
+            });
+    };
+
+
+    /*-----------------------------------------------------------------
       Hamburger
     -------------------------------------------------------------------*/
 
@@ -223,6 +272,28 @@ $(document).ready(function() {
         }
     }, 250));
 
+
+    /*-----------------------------------------------------------------
+      Progress bar
+    -------------------------------------------------------------------*/
+
+    function progressBar() {
+        $('.progress').each(function() {
+            var ctrl = new ScrollMagic.Controller();
+            new ScrollMagic.Scene({
+                    triggerElement: '.progress',
+                    triggerHook: 'onEnter',
+                    duration: 300
+                })
+                .addTo(ctrl)
+                .on("enter", function(e) {
+                    var progressBar = $('.progress-bar');
+                    progressBar.each(function(indx) {
+                        $(this).css({ 'width': $(this).attr('aria-valuenow') + '%', 'z-index': '2' });
+                    });
+                });
+        });
+    }
 
 
     /*-----------------------------------------------------------------
