@@ -600,6 +600,6 @@ $(document).ready(function() {
     }
 });
 
-$(".circle-menu")[0].ready(function() {
+$(".circle-menu").ready(function() {
     setTimeout(function() { $("#menu-display").css("opacity", "1"); }, 1000);
 });
