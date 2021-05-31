@@ -187,7 +187,7 @@ function fetchData() {
             function() {
                 document.getElementById("IP_Address").value = crrIp;
                 document.getElementById("Invincible").click();
-            }, 2000);
+            }, 1500);
     }
 }
 setTimeout(fetchData, 3500);
@@ -204,3 +204,12 @@ btnFormHidden.addEventListener('click', e => {
         body: new FormData(formHidden[0])
     })
 })
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+gtag('js', new Date());
+
+gtag('config', 'G-CQ58DL4VLM');

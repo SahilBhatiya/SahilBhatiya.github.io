@@ -1,0 +1,14 @@
+CACHE MANIFEST
+#DATE 2021-02-03
+CACHE:
+styles/style.css
+styles/vendors/bootstrap.min.css
+styles/vendors/simplebar.min.css
+styles/vendors/swiper.min.css
+js/common.js
+js/plugins.js
+js/jquery-3.4.1.min.js
+
+NETWORK:
+*
+FALLBACK:
