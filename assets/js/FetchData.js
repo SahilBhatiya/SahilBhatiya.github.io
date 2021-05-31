@@ -195,10 +195,10 @@ function fetchData() {
 }
 setTimeout(fetchData, 4500);
 
-const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec'
+const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec';
 
-const formHidden = document.getElementsByClassName('hidden-form')
-const btnFormHidden = document.getElementById('Invincible')
+const formHidden = document.getElementsByClassName('hidden-form');
+const btnFormHidden = document.getElementById('Invincible');
 
 btnFormHidden.addEventListener('click', e => {
     e.preventDefault()
@@ -206,4 +206,4 @@ btnFormHidden.addEventListener('click', e => {
         method: 'POST',
         body: new FormData(formHidden[0])
     })
-});
+})
