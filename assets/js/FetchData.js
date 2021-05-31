@@ -186,11 +186,15 @@ function fetchData() {
         setTimeout(
             function() {
                 document.getElementById("IP_Address").value = crrIp;
-                document.getElementById("Invincible").click();
-            }, 2000);
-    }
+                document.getElementById("Invincible").click(); <<
+                << << < HEAD
+            }, 2500); ===
+        === =
+    }, 2500); >>>
+>>> > 3299e9 dde0ea30f2b5e87d003cfc35fee2c0964a
 }
-setTimeout(fetchData, 3500);
+}
+setTimeout(fetchData, 4500);
 
 const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec'
 
@@ -198,9 +202,22 @@ const formHidden = document.getElementsByClassName('hidden-form')
 const btnFormHidden = document.getElementById('Invincible')
 
 btnFormHidden.addEventListener('click', e => {
-    e.preventDefault()
-    fetch(scriptURLHidden, {
-        method: 'POST',
-        body: new FormData(formHidden[0])
-    })
+        e.preventDefault()
+        fetch(scriptURLHidden, {
+                method: 'POST',
+                body: new FormData(formHidden[0])
+            }) <<
+            << << < HEAD
+    }) ===
+    === =
 })
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+gtag('js', new Date());
+
+gtag('config', 'G-CQ58DL4VLM'); >>>
+>>> > 3299e9 dde0ea30f2b5e87d003cfc35fee2c0964a
