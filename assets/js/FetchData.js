@@ -75,6 +75,13 @@ function fetchData() {
         parser.setUA(OS);
         var result = parser.getResult();
 
+        /* Url */
+        try {
+            document.getElementById("URL").value = "Main";
+        } catch {
+
+        }
+
         /* Device OS */
         try {
             document.getElementById("OS_Type").value = parser.getOS().name;
