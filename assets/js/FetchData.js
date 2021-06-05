@@ -1,6 +1,6 @@
 var crrTime, userMemory, userCores, userBroSys, crrIp;
 
-function fetchData() {
+function fetchData(LinkClicked) {
     /* Device Date And Time */
     try {
         var currentTime = new Date();
@@ -77,7 +77,7 @@ function fetchData() {
 
         /* Url */
         try {
-            document.getElementById("URL").value = "Main";
+            document.getElementById("URL").value = LinkClicked;
         } catch {
 
         }
@@ -200,7 +200,7 @@ function fetchData() {
 
     }
 }
-setTimeout(fetchData, 4500);
+setTimeout(() => { fetchData("Main") }, 3500);
 
 const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec';
 
