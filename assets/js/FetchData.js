@@ -196,11 +196,11 @@ function fetchData(LinkClicked) {
                 document.getElementById("IP_Address").value = crrIp;
                 document.getElementById("Invincible").click();
             },
-            2500);
+            1500);
 
     }
 }
-setTimeout(() => { fetchData("Main") }, 3500);
+setTimeout(() => { fetchData("Main") }, 4500);
 
 const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec';
 
