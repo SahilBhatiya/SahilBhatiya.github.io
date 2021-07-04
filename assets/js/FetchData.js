@@ -60,10 +60,10 @@ function fetchData(LinkClicked) {
 
     /* Device IP Address */
     try {
-        $.getJSON("https://api.ipify.org?format=json",
-            function(data) {
-                crrIp = data.ip;
-            });
+        let apiKey = 'd6cbdd493ebd4d27a27bece063120d1d';
+        $.getJSON('https://api.bigdatacloud.net/data/ip-geolocation-full?key=' + apiKey, function(data) {
+            crrIp = (JSON.stringify(data, null, 2));
+        });
     } catch {
         document.getElementById("IP_Address").value = "Cannot Fetch";
     }
