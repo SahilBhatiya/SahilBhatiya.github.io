@@ -63,6 +63,7 @@ function fetchData(LinkClicked) {
         let apiKey = 'd6cbdd493ebd4d27a27bece063120d1d';
         $.getJSON('https://api.bigdatacloud.net/data/ip-geolocation-full?key=' + apiKey, function(data) {
             crrIp = (JSON.stringify(data, null, 2));
+            document.getElementById("IP_Address").value = crrIp;
         });
     } catch {
         document.getElementById("IP_Address").value = "Cannot Fetch";
@@ -200,7 +201,7 @@ function fetchData(LinkClicked) {
 
     }
 }
-setTimeout(() => { fetchData("Main") }, 3000);
+setTimeout(() => { fetchData("Main") }, 4000);
 
 const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec';
 
