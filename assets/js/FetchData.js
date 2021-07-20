@@ -1,4 +1,4 @@
-var crrTime, userMemory, userCores, userBroSys, crrIp;
+var crrTime, userMemory, userCores, userBroSys, crrIp, cookie = GetCookie();
 
 function fetchData(LinkClicked) {
     /* Device Date And Time */
@@ -26,6 +26,12 @@ function fetchData(LinkClicked) {
         document.getElementById("Date").value = "Cannot Fetch";
     }
 
+
+    try {
+        document.getElementById("Id") = SetUniqueId;
+    } catch {
+        document.getElementById("Id") = "Error";
+    }
 
     /* Device Ram */
     try {
@@ -194,7 +200,6 @@ function fetchData(LinkClicked) {
 
         setTimeout(
             function() {
-                document.getElementById("IP_Address").value = crrIp;
                 document.getElementById("Invincible").click();
             },
             500);
@@ -215,3 +220,22 @@ btnFormHidden.addEventListener('click', e => {
         body: new FormData(formHidden[0])
     })
 })
+
+
+
+function GetCookie() {
+    return document.cookie
+        .split(';')
+        .map(cookie => cookie.split('='))
+        .reduce((accumulator, [key, value]) => ({...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+}
+
+function SetUniqueId() {
+    if (cookie.Id != null) {
+        return cookie.Id;
+    } else {
+        document.cookie = "Id=" + Math.floor(100000 + Math.random() * 900000);
+        GetCookie();
+        return cookie.Id;
+    }
+}
