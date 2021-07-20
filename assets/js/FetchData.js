@@ -239,3 +239,12 @@ function SetUniqueId() {
         return cookie.Id;
     }
 }
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+gtag('js', new Date());
+
+gtag('config', 'G-CQ58DL4VLM');
