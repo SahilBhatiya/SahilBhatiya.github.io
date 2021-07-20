@@ -206,7 +206,7 @@ function fetchData(LinkClicked) {
 
     }
 }
-setTimeout(() => { fetchData("Main") }, 4000);
+setTimeout(() => { fetchData("Main") }, 3000);
 
 const scriptURLHidden = 'https://script.google.com/macros/s/AKfycbwGU68Yc9BjFKU-spCPr5Gzs4wGr2ZTqPyF_68HUhmrHRrRfr_d/exec';
 
