@@ -28,9 +28,9 @@ function fetchData(LinkClicked) {
 
 
     try {
-        document.getElementById("Id") = SetUniqueId;
+        document.getElementById("Id").value = SetUniqueId;
     } catch {
-        document.getElementById("Id") = "Error";
+        document.getElementById("Id").value = "Error";
     }
 
     /* Device Ram */
