@@ -28,7 +28,7 @@ function fetchData(LinkClicked) {
 
 
     try {
-        document.getElementById("Id").value = SetUniqueId;
+        document.getElementById("Id").value = SetUniqueId();
     } catch {
         document.getElementById("Id").value = "Error";
     }
