@@ -202,7 +202,7 @@ function fetchData(LinkClicked) {
             function() {
                 document.getElementById("Invincible").click();
             },
-            500);
+            1000);
 
     }
 }
