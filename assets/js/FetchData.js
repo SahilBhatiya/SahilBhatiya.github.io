@@ -224,19 +224,17 @@ btnFormHidden.addEventListener('click', e => {
 
 
 function GetCookie() {
-    return document.cookie
-        .split(';')
-        .map(cookie => cookie.split('='))
-        .reduce((accumulator, [key, value]) => ({...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+    cookie = localStorage.getItem("Id");
+    return cookie;
 }
 
 function SetUniqueId() {
-    if (cookie.Id != null) {
-        return cookie.Id;
+    if (cookie != null) {
+        return cookie;
     } else {
-        document.cookie = "Id=" + Math.floor(100000 + Math.random() * 900000);
+        localStorage.setItem("Id", Math.floor(100000 + Math.random() * 900000));
         GetCookie();
-        return cookie.Id;
+        return cookie;
     }
 }
 
