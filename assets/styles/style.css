@@ -31,7 +31,7 @@ html {
 body {
     opacity: 1 !important;
     background-color: var(--Light-color);
-    color: #44566c;
+    color: var(--Dark-color);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.65;
@@ -49,6 +49,24 @@ body {
     --Light-color: #fff;
     --Light-color-2: #d0d0d0;
     --Dark-color: #44566c;
+    --Dark-color-2: #8697a8;
+    --Dark-color-3: rgba(245, 248, 255, 0.5);
+    --Shadow-1: 0 1rem 2rem rgba(134, 151, 168, .25), 0 .125rem 1rem rgba(134, 151, 168, .5);
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --Blue-color: #4285f4;
+        --Red-color: #ea4335;
+        --Yellow-color: #fbbc04;
+        --Green-color: #34a853;
+        --Light-color: #1a1a1a;
+        --Light-color-2: #d0d0d0;
+        --Dark-color: #efefef;
+        --Dark-color-2: #9b9b9b;
+        --Dark-color-3: rgba(45, 48, 55, 0.3);
+        --Shadow-1: 0 1rem 2rem rgba(19, 19, 19, 0.25), 0 .125rem 1rem rgba(19, 19, 19, 0.5)
+    }
 }
 
 ::-webkit-scrollbar {
@@ -103,7 +121,7 @@ html.is-scroll-disabled body {
 }
 
 .bg-triangles {
-    background-color: #fff
+    background-color: var(--Light-color)
 }
 
 @media only screen and (max-width:580px) {
@@ -126,7 +144,7 @@ html.is-scroll-disabled body {
 }
 
 .bg-peach {
-    background-image: linear-gradient(115.29deg, #fff2e7 1.33%, #ffcada 98.21%);
+    background-image: linear-gradient(115.29deg, var(--Light-color)2e7 1.33%, #ffcada 98.21%);
     background-attachment: fixed
 }
 
@@ -293,11 +311,11 @@ h6 {
 }
 
 .color--light {
-    color: #8697a8
+    color: var(--Dark-color-2)
 }
 
 .color--dark {
-    color: #44566c
+    color: var(--Dark-color)
 }
 
 .block-quote {
@@ -366,7 +384,7 @@ h6 {
 
 .block-quote__author::before {
     content: '';
-    background-color: #44566c;
+    background-color: var(--Dark-color);
     height: .0625rem;
     margin-bottom: auto;
     margin-top: auto;
@@ -435,7 +453,7 @@ img {
 }
 
 iframe {
-    background-color: #44566c;
+    background-color: var(--Dark-color);
     border: 0;
     display: block;
     height: 100%;
@@ -463,11 +481,11 @@ iframe {
 .input,
 .textarea,
 select {
-    background-color: #f5f8f9;
-    border: 1px solid #f5f8f9;
+    background-color: var(--Dark-color-3);
+    border: 1px solid var(--Dark-color-3);
     border-radius: 20px;
     box-shadow: none;
-    color: #44566c;
+    color: var(--Dark-color);
     font-size: inherit;
     height: auto;
     padding: .875rem 1.375rem .8125rem;
@@ -492,7 +510,7 @@ select {
 .textarea:focus,
 select:focus {
     background-color: #f5f8f9;
-    color: #44566c;
+    color: var(--Dark-color);
     box-shadow: none;
     outline: 0
 }
@@ -509,11 +527,11 @@ select:focus {
 }
 
 .input--white {
-    background-color: #fff
+    background-color: var(--Light-color)
 }
 
 .input--white:focus {
-    background-color: #fff
+    background-color: var(--Light-color)
 }
 
 .input__icon {
@@ -534,11 +552,11 @@ select:focus {
 }
 
 .textarea--white {
-    background-color: #fff
+    background-color: var(--Light-color)
 }
 
 .textarea--white:focus {
-    background-color: #fff
+    background-color: var(--Light-color)
 }
 
 .form-group {
@@ -553,7 +571,7 @@ select:focus {
 }
 
 .form-group .font-icon {
-    fill: #8697a8;
+    fill: var(--Dark-color-2);
     font-size: 1.0625rem;
     margin: auto 0;
     position: absolute;
@@ -603,23 +621,23 @@ select:focus {
 }
 
 .form-control::-webkit-input-placeholder {
-    color: #8697a8
+    color: var(--Dark-color-2)
 }
 
 .form-control::-moz-placeholder {
-    color: #8697a8
+    color: var(--Dark-color-2)
 }
 
 .form-control:-ms-input-placeholder {
-    color: #8697a8
+    color: var(--Dark-color-2)
 }
 
 .form-control::-ms-input-placeholder {
-    color: #8697a8
+    color: var(--Dark-color-2)
 }
 
 .form-control::placeholder {
-    color: #8697a8
+    color: var(--Dark-color-2)
 }
 
 input:invalid,
@@ -652,7 +670,7 @@ textarea:invalid {
 
 .custom-control-label::before {
     background-color: transparent;
-    border: 1px solid #f0f0f6
+    border: 1px solid var(--Dark-color-3);
 }
 
 .custom-select,
@@ -662,7 +680,7 @@ select {
 
 .custom-select option,
 select option {
-    color: #44566c
+    color: var(--Dark-color)
 }
 
 .dropdown-menu {
@@ -695,11 +713,11 @@ select option {
 }
 
 .nav__item a {
-    color: #44566c
+    color: var(--Dark-color)
 }
 
 .progress {
-    background-color: #f0f0f6;
+    background-color: var(--Dark-color-3);
     border-radius: 1rem;
     height: 1.5rem;
     margin-bottom: 1.5rem;
@@ -767,45 +785,45 @@ select option {
 
 .badge--light {
     background-color: #f5f6f7;
-    color: #44566c
+    color: var(--Dark-color)
 }
 
 .badge--gray {
     background-color: #f0f0f6;
-    color: #44566c
+    color: var(--Dark-color)
 }
 
 .CustomSVGColor path {
-    fill: #44566c !important
+    fill: var(--Dark-color) !important
 }
 
 .badge--blue {
     background-color: var(--Blue-color);
-    color: #fff
+    color: var(--Light-color)
 }
 
 .badge--blue-gradient {
     background-image: linear-gradient(to right, #0081ff 0, #3fa0ff 50%, #0045ff 100%);
-    color: #fff
+    color: var(--Light-color)
 }
 
 .badge--aqua {
     background-color: #00f1e2;
-    color: #fff
+    color: var(--Light-color)
 }
 
 .badge--red {
     background-color: #ff3d57;
-    color: #fff
+    color: var(--Light-color)
 }
 
 .tooltip-inner {
     margin-top: -20px;
     max-width: 12.5rem;
     padding: .25rem .5625rem .25rem;
-    background-color: #44566c;
+    background-color: var(--Dark-color);
     border-radius: .25rem;
-    box-shadow: 0 1rem 2rem rgba(134, 151, 168, .25), 0 .125rem 1rem rgba(134, 151, 168, .5)
+    box-shadow: var(--Shadow-1)
 }
 
 .tooltip.show {
@@ -815,32 +833,32 @@ select option {
 .bs-tooltip-auto[x-placement^=top] .arrow::before,
 .bs-tooltip-top .arrow::before {
     border-width: .3125rem .3125rem 0;
-    border-top-color: #44566c
+    border-top-color: var(--Dark-color)
 }
 
 .bs-tooltip-auto[x-placement^=right] .arrow::before,
 .bs-tooltip-right .arrow::before {
     border-width: .3125rem .3125rem .3125rem 0;
-    border-right-color: #44566c
+    border-right-color: var(--Dark-color)
 }
 
 .bs-tooltip-auto[x-placement^=left] .arrow::before,
 .bs-tooltip-left .arrow::before {
     border-width: .3125rem 0 .3125rem .3125rem;
-    border-left-color: #44566c
+    border-left-color: var(--Dark-color)
 }
 
 .bs-tooltip-auto[x-placement^=bottom] .arrow::before,
 .bs-tooltip-bottom .arrow::before {
     border-width: 0 .3125rem .3125rem;
-    border-bottom-color: #44566c
+    border-bottom-color: var(--Dark-color)
 }
 
 .btn {
     background-color: var(--Blue-color);
     border-radius: 20px;
     border: 0;
-    box-shadow: 0 .5rem 1rem rgba(48, 76, 253, .15), 0 .125rem .25rem rgba(48, 76, 253, .15);
+    box-shadow: var(--Shadow-1);
     color: var(--Light-color);
     cursor: pointer;
     font-size: 1rem;
@@ -859,21 +877,7 @@ select option {
 }
 
 .btn:focus {
-    box-shadow: 0 1.5rem 2.5rem rgba(48, 76, 253, .1), 0 .5rem 1rem rgba(48, 76, 253, .1)
-}
-
-.btn::before {
-    content: '';
-    box-shadow: 0 .25rem 2rem rgba(48, 76, 253, .25), 0 .25rem 1rem rgba(48, 76, 253, .25);
-    margin: 0 auto;
-    height: 1rem;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: .5s ease-in-out;
-    width: 64%;
-    z-index: -1
+    box-shadow: var(--Shadow-1)
 }
 
 .btn:hover::before {
@@ -882,16 +886,16 @@ select option {
 
 .btn--light {
     background-color: #f5f8f9;
-    color: #44566c
+    color: var(--Dark-color)
 }
 
 .btn--gray {
     background-color: #f0f0f6;
-    color: #44566c
+    color: var(--Dark-color)
 }
 
 .btn--dark {
-    background-color: #44566c
+    background-color: var(--Dark-color)
 }
 
 .btn--blue-gradient {
@@ -901,7 +905,7 @@ select option {
 
 .btn--red {
     background-color: #ff3d57;
-    color: #fff
+    color: var(--Light-color)
 }
 
 .btn .font-icon {
@@ -914,7 +918,7 @@ button:focus {
 
 .Face {
     fill: var(--Light-color);
-    background-color: #fff
+    background-color: var(--Light-color)
 }
 
 @media only screen and (max-width:1200px) {
@@ -1050,7 +1054,7 @@ button:focus {
 }
 
 .contacts-block__item a {
-    color: #44566c;
+    color: var(--Dark-color);
     text-decoration: none
 }
 
@@ -1076,13 +1080,13 @@ button:focus {
     max-height: 1.5rem;
     max-width: 1.5rem;
     margin-right: 14px;
-    fill: #44566c
+    fill: var(--Dark-color)
 }
 
 .Download_icon {
     width: 2.5rem;
     height: 1.25rem;
-    fill: #fff
+    fill: var(--Light-color)
 }
 
 @media(min-width:1200px) {
@@ -1102,7 +1106,7 @@ button:focus {
     padding: 1.875rem;
     position: relative;
     transition: box-shadow .3s ease-in-out;
-    background: #fff
+    background: var(--Light-color)
 }
 
 @media only screen and (max-width:580px) {
@@ -1258,29 +1262,16 @@ button:focus {
 }
 
 .box-inner--white {
-    background-color: #fff
+    background-color: var(--Light-color)
 }
 
 .box-inner--white::after,
 .box-inner--white::before {
-    background-color: #fff
+    background-color: var(--Light-color)
 }
 
 .shadow {
-    box-shadow: rgba(100, 100, 111, .2) 0 7px 29px 0 !important
-}
-
-.shadow::before {
-    content: '';
-    box-shadow: 0 1.875rem 3.125rem rgba(103, 118, 128, .2);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: 0 auto;
-    height: 2rem;
-    width: 65%;
-    z-index: -1
+    box-shadow: var(--Shadow-1) !important
 }
 
 .shadow--orange {
@@ -1378,11 +1369,11 @@ button:focus {
 
 .Skills-Card:hover {
     background-color: var(--Blue-color) !important;
-    color: #fff
+    color: var(--Light-color)
 }
 
 .Skills-Card:hover p {
-    color: #fff
+    color: var(--Light-color)
 }
 
 .avatar--180 {
@@ -1393,9 +1384,10 @@ button:focus {
 }
 
 .avatar--80 {
+    background-color: var(--Light-color);
     max-height: 5rem;
     max-width: 5rem;
-    filter: drop-shadow(-.15625rem 0 0 #fff) drop-shadow(.1875rem 0 0 #fff) drop-shadow(0 -.125rem 0 #fff) drop-shadow(0 .125rem 0 #fff) drop-shadow(0 .25rem .25rem rgba(134, 151, 168, .25)) drop-shadow(0 .5rem .5rem rgba(134, 151, 168, .4))
+    box-shadow: var(--Shadow-1)
 }
 
 @media only screen and (max-width:580px) {
@@ -1447,7 +1439,7 @@ button:focus {
 }
 
 .social__link {
-    color: #44566c;
+    color: var(--Dark-color);
     display: inline-block;
     font-size: .875rem;
     margin-left: .8125rem;
@@ -1481,7 +1473,7 @@ button:focus {
     right: 10px;
     width: 3.75rem;
     z-index: 5;
-    box-shadow: rgba(100, 100, 111, .2) 0 7px 29px 0
+    box-shadow: var(--Shadow-1)
 }
 
 .circle-menu>* {
@@ -1631,7 +1623,7 @@ button:focus {
     position: fixed;
     background: var(--Light-color);
     border-radius: 2rem 0 0 2rem;
-    box-shadow: 0 1.5rem 2.5rem rgba(48, 76, 253, .05), 0 .5rem 1rem rgba(48, 76, 253, .05);
+    box-shadow: var(--Shadow-1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1698,7 +1690,7 @@ button:focus {
 
 @media only screen and (max-width:580px) {
     .nav__item a {
-        color: #44566c
+        color: var(--Dark-color)
     }
 }
 
@@ -1763,7 +1755,7 @@ button:focus {
 
 .bg-green .footer,
 .bg-peach .footer {
-    color: #fff
+    color: var(--Light-color)
 }
 
 .case-item {
@@ -1772,7 +1764,7 @@ button:focus {
     margin-bottom: 1.875rem;
     padding: 1.875rem 1.875rem 1.5rem;
     position: relative;
-    background-color: #f5f8ff !important
+    background-color: var(--Dark-color-3) !important
 }
 
 .case-item>* {
@@ -1874,14 +1866,14 @@ button:focus {
 }
 
 .popover-map-title {
-    color: #44566c;
+    color: var(--Dark-color);
     font-size: 1.1875rem;
     margin-top: .0625rem;
     margin-bottom: .5rem
 }
 
 .popover-map-caption {
-    color: #44566c;
+    color: var(--Dark-color);
     font-weight: 400
 }
 
@@ -1965,7 +1957,7 @@ button:focus {
 
 .gallery-grid__category {
     font-size: .875rem;
-    color: #8697a8;
+    color: var(--Dark-color-2);
     display: block
 }
 
@@ -1993,7 +1985,7 @@ button:focus {
         color: var(--Blue-color)
     }
     .filter__link {
-        color: #8697a8;
+        color: var(--Dark-color-2);
         padding: 0 .25rem;
         text-decoration: none;
         display: block;
@@ -2013,7 +2005,7 @@ button:focus {
     .select {
         background-color: #f5f8f9;
         border-radius: 1.25rem;
-        color: #8697a8;
+        color: var(--Dark-color-2);
         display: block;
         margin-bottom: 2rem;
         padding: .1875rem 1.1875rem .1875rem 1.5rem;
@@ -2063,20 +2055,20 @@ button:focus {
         display: block;
         text-align: left;
         padding: .1875rem 1.1875rem;
-        color: #44566c;
+        color: var(--Dark-color);
         cursor: pointer
     }
     .select ul li:hover {
         background-color: var(--Blue-color)
     }
     .select ul li:hover a {
-        color: #fff
+        color: var(--Light-color)
     }
     .select ul li:first-child {
         display: none
     }
     .select ul li a {
-        color: #44566c;
+        color: var(--Dark-color);
         text-decoration: none
     }
 }
@@ -2232,7 +2224,7 @@ button:focus {
 }
 
 .header-post__date {
-    color: #8697a8;
+    color: var(--Dark-color-2);
     font-size: .875rem;
     margin-bottom: 1rem;
     text-transform: uppercase
@@ -2331,7 +2323,7 @@ button:focus {
 }
 
 .gallery-post__caption {
-    color: #8697a8;
+    color: var(--Dark-color-2);
     font-size: .875rem;
     font-style: italic;
     padding: 1rem 1rem 2rem;
@@ -2346,7 +2338,7 @@ button:focus {
 }
 
 .gallery-post__caption a {
-    color: #8697a8
+    color: var(--Dark-color-2)
 }
 
 .footer-post {
@@ -2373,7 +2365,7 @@ button:focus {
 
 .footer-post::before {
     content: '';
-    background-color: #44566c;
+    background-color: var(--Dark-color);
     height: .0625rem;
     margin: auto;
     position: absolute;
@@ -2386,7 +2378,7 @@ button:focus {
 .footer-post__share {
     display: flex;
     align-items: baseline;
-    color: #44566c;
+    color: var(--Dark-color);
     font-size: .875rem;
     margin: 0 1.0625rem
 }
@@ -2494,7 +2486,7 @@ button:focus {
     display: flex;
     justify-content: space-between;
     font-size: 1.0625rem;
-    color: #44566c;
+    color: var(--Dark-color);
     margin-top: .5rem;
     margin-bottom: .5rem
 }
@@ -2518,7 +2510,7 @@ button:focus {
 .comment-box__details-date {
     font-size: .875rem;
     font-weight: 400;
-    color: #8697a8
+    color: var(--Dark-color-2)
 }
 
 @media only screen and (max-width:580px) {
@@ -2534,7 +2526,7 @@ button:focus {
 }
 
 .comment-box__footer {
-    color: #8697a8;
+    color: var(--Dark-color-2);
     display: inline-flex;
     list-style: none;
     margin: 0;
@@ -2657,7 +2649,7 @@ button:focus {
 }
 
 .comment-form .icon-smile {
-    color: #8697a8;
+    color: var(--Dark-color-2);
     cursor: pointer;
     font-size: 1.1875rem
 }
@@ -2704,7 +2696,7 @@ button:focus {
 }
 
 .nicescroll-cursors {
-    background-color: #8697a8 !important
+    background-color: var(--Dark-color-2) !important
 }
 
 .social-auth {
@@ -2730,7 +2722,7 @@ button:focus {
 }
 
 .social-auth__link {
-    color: #fff
+    color: var(--Light-color)
 }
 
 .social-auth__link:hover {
@@ -2774,7 +2766,7 @@ button:focus {
 .review-item {
     display: flex;
     flex-direction: column;
-    background-color: rgba(245, 248, 255, .5);
+    background-color: var(--Dark-color-3);
     background-image: url(../icons/icon-quote.svg);
     background-repeat: no-repeat;
     background-position: right 1.875rem top 1.875rem;
@@ -2912,7 +2904,7 @@ button:focus {
 }
 
 .timeline__period {
-    color: #8697a8;
+    color: var(--Dark-color-2);
     font-size: .875rem
 }
 
@@ -2927,8 +2919,8 @@ button:focus {
 }
 
 .back-to-top {
-    border-top: .0625rem solid #44566c;
-    border-left: .0625rem solid #44566c;
+    border-top: .0625rem solid var(--Dark-color);
+    border-left: .0625rem solid var(--Dark-color);
     cursor: pointer;
     height: 2rem;
     opacity: .5;
@@ -2971,7 +2963,7 @@ button:focus {
 }
 
 .medium-zoom-overlay {
-    background: #fff !important;
+    background: var(--Light-color) !important;
     z-index: 9
 }
 
@@ -3054,7 +3046,7 @@ button:focus {
 }
 
 .Testimonial__Link {
-    color: #44566c
+    color: var(--Dark-color)
 }
 
 .Testimonial__Link:hover {
@@ -3062,8 +3054,8 @@ button:focus {
 }
 
 .badge--dark {
-    background-color: #44566c;
-    color: #fff !important
+    background-color: var(--Dark-color-3);
+    color: var(--Light-color) !important
 }
 
 .swiper-container {
@@ -3487,7 +3479,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination-white .swiper-pagination-bullet-active {
-    background: #fff
+    background: var(--Light-color)
 }
 
 .swiper-pagination-progressbar.swiper-pagination-white {
@@ -3495,7 +3487,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination-progressbar.swiper-pagination-white .swiper-pagination-progressbar-fill {
-    background: #fff
+    background: var(--Light-color)
 }
 
 .swiper-pagination-black .swiper-pagination-bullet-active {
