@@ -836,6 +836,8 @@ body.light hr.separator {
   align-items: center;
   text-align: center;
   justify-content: center;
+  background-color: rgba(65, 105, 225, .7) !important;
+  backdrop-filter: blur(30px);
 }
 
 .portfolio .grid li figure div span {
