@@ -390,6 +390,8 @@ body.light hr.separator {
   width: 100%;
   position: relative;
   padding: 80px 0;
+  backdrop-filter: blur(30px);
+  background:rgba(30, 37, 48, 0.07)!important;
 }
 
 .title-section h1 {
