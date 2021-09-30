@@ -390,8 +390,6 @@ body.light hr.separator {
   width: 100%;
   position: relative;
   padding: 80px 0;
-  backdrop-filter: blur(30px);
-  background:rgba(30, 37, 48, 0.07)!important;
 }
 
 .title-section h1 {
@@ -418,6 +416,7 @@ body.light hr.separator {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.07);
+  background-color: transparent;
 }
 
 /* [ HEADER ] */
@@ -1660,7 +1659,8 @@ body.light hr.separator {
 
   .title-section {
     padding: 16px 25px 14px;
-    background: #252525;
+    backdrop-filter: blur(30px);
+    background:rgba(30, 37, 48, 0.07)!important;
     border-bottom: 1px solid #333;
     margin-bottom: 36px;
     position: fixed;
