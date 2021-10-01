@@ -123,7 +123,6 @@
     <h1>get in <span>touch</span></h1>
     <span class="title-bg">contact</span>
 </section>
-<h5 class="font-size-20 text-center mb-5"><span>Under Development</span> <a href="/old/">Visit Old Website</a></h5>
 <!-- Page Title Ends -->
 <!-- Main Content Starts -->
 <section class="main-content revealator-slideup revealator-once revealator-delay1">
@@ -162,27 +161,27 @@
             <!-- Left Side Ends -->
             <!-- Contact Form Starts -->
             <div class="col-12 col-lg-8">
-                <form class="contactform" method="post" action="http://slimhamdi.net/tunis/dark/php/process-form.php">
+                <form class="contact-form" method="post">
                     <div class="contactform">
                         <div class="row">
                             <div class="col-12 col-md-4">
-                                <input type="text" name="name" placeholder="YOUR NAME">
+                                <input type="text" name="Name" id="nameContact" placeholder="YOUR NAME">
                             </div>
                             <div class="col-12 col-md-4">
-                                <input type="email" name="email" placeholder="YOUR EMAIL">
+                                <input type="email" name="Email" id="emailContact" placeholder="YOUR EMAIL">
                             </div>
                             <div class="col-12 col-md-4">
-                                <input type="text" name="subject" placeholder="YOUR SUBJECT">
+                                <input type="text" name="Subject" placeholder="YOUR SUBJECT">
                             </div>
                             <div class="col-12">
-                                <textarea name="message" placeholder="YOUR MESSAGE"></textarea>
-                                <button type="submit" class="button">
+                                <textarea name="Message" id="messageContact" placeholder="YOUR MESSAGE"></textarea>
+                                <button type="submit" class="button" id="submit-btn">
                                     <span class="button-text">Send Message</span>
                                     <span class="button-icon fa fa-send"></span>
                                 </button>
                             </div>
                             <div class="col-12 form-message">
-                                <span class="output_message text-center font-weight-600 text-uppercase"></span>
+                                <span class="output_message text-center font-weight-600 text-uppercase" id="output_message"></span>
                             </div>
                         </div>
                     </div>
@@ -219,6 +218,7 @@
 <!-- Bootstrap -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="../js/custom.js"></script>
+<script src="../js/SendMessage.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-CQ58DL4VLM"></script>
