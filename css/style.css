@@ -418,6 +418,7 @@ body.light hr.separator {
   color: rgba(255, 255, 255, 0.07);
   background-color: transparent;
   user-select: none;
+  z-index: -1;
 }
 
 /* [ HEADER ] */
@@ -1443,7 +1444,7 @@ body.light hr.separator {
     width: 100%;
     height: 100%;
     margin: 0;
-    padding-top: 60px;
+    padding-top: 100px;
     background-color: rgba(37, 37, 37, .1);
     backdrop-filter: blur(30px);
     -webkit-font-smoothing: antialiased;
@@ -1459,6 +1460,20 @@ body.light hr.separator {
   #menu li {
     position: relative;
     padding-left: 30px;
+    margin: 10px;
+  }
+
+  #menu .active a{
+    background-color: rgba(65, 105, 225, .3);
+    margin-right: 20px;
+    border-radius: 8px;
+    color: white !important;
+    padding-left: 20px !important;
+  }
+  #menu .active a{
+    background-color: rgba(65, 105, 225, .3);
+    border-radius: 8px;
+    color: white !important;
   }
 
   #menu li:after {
@@ -1466,7 +1481,6 @@ body.light hr.separator {
     content: '';
     height: 1px;
     width: calc(100% - 60px);
-    background: #333;
     left: 30px;
   }
 
@@ -1476,6 +1490,9 @@ body.light hr.separator {
 
   #menu li.active a span {
     font-weight: 600;
+  }
+   #menu li a span {
+    margin-left: 30px;
   }
 
   #menu li a {
@@ -1487,6 +1504,8 @@ body.light hr.separator {
     text-decoration: none;
     padding: 14px 0;
     position: relative;
+    padding-left: 20px !important;
+    margin-right: 20px;
   }
 
   #menu li a span {
