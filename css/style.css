@@ -417,6 +417,7 @@ body.light hr.separator {
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.07);
   background-color: transparent;
+  user-select: none;
 }
 
 /* [ HEADER ] */
