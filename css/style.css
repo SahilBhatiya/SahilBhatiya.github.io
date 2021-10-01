@@ -1469,6 +1469,7 @@ body.light hr.separator {
     border-radius: 8px;
     color: white !important;
     padding-left: 20px !important;
+    box-shadow: 0px 0px 60px 10px rgba(0,0,0,0.4);
   }
   #menu .active a{
     background-color: rgba(65, 105, 225, .3);
